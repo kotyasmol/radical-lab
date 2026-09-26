@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises';
-const packages = ['decimal.js', 'nerdamer', 'react', 'react-dom'];
+const packages = ['decimal.js', 'nerdamer', 'react', 'react-dom', 'scheduler'];
 let output =
   '# Third-party notices\n\nRuntime libraries bundled in the portable distribution. Development dependencies are recorded in package-lock.json and are not shipped as runtime services.\n';
 for (const name of packages) {
