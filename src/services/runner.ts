@@ -10,26 +10,46 @@ export interface WorkerLike {
 export function createRunner(createWorker: () => WorkerLike, timeout = 4000) {
   let cancelCurrent: (() => void) | undefined;
   return {
-    cancel() { cancelCurrent?.(); },
+    cancel() {
+      cancelCurrent?.();
+    },
     run(request: CalculationRequest): Promise<CalculationResult> {
       cancelCurrent?.();
       return new Promise((resolve, reject) => {
         let worker: WorkerLike;
-        try { worker = createWorker(); } catch { reject('WORKER'); return; }
+        try {
+          worker = createWorker();
+        } catch {
+          reject('WORKER');
+          return;
+        }
         let settled = false;
         const finish = () => {
-          settled = true; clearTimeout(timer); worker.terminate(); cancelCurrent = undefined;
+          settled = true;
+          clearTimeout(timer);
+          worker.terminate();
+          cancelCurrent = undefined;
         };
-        const fail = (code: string) => { if (!settled) { finish(); reject(code); } };
+        const fail = (code: string) => {
+          if (!settled) {
+            finish();
+            reject(code);
+          }
+        };
         const timer = setTimeout(() => fail('TIMEOUT'), timeout);
         cancelCurrent = () => fail('CANCELLED');
         worker.onmessage = ({ data }) => {
           if (settled) return;
           finish();
-          if (data.ok) resolve(data.result); else reject(data.code);
+          if (data.ok) resolve(data.result);
+          else reject(data.code);
         };
         worker.onerror = () => fail('WORKER');
-        try { worker.postMessage(request); } catch { fail('WORKER'); }
+        try {
+          worker.postMessage(request);
+        } catch {
+          fail('WORKER');
+        }
       });
     },
   };
