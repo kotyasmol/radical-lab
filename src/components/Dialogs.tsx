@@ -90,7 +90,6 @@ export function Dialogs({
             <p>
               {t.version} {VERSION}
             </p>
-            <p>{t.updateText}</p>
             <p role="status">
               {update === 'current'
                 ? t.upToDate

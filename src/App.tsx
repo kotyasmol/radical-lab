@@ -144,7 +144,7 @@ export default function App() {
           }}
           aria-label="Radical Lab"
         >
-          <span className="brand-mark">√</span>Radical Lab
+          Radical Lab
         </a>
         <nav aria-label={t.language}>
           <select
@@ -165,10 +165,6 @@ export default function App() {
         </nav>
       </header>
       <main className="main">
-        <div className="intro">
-          <h1>{t.title}</h1>
-          <p>{t.subtitle}</p>
-        </div>
         <div className="workspace">
           <div className="calculator">
             <div className="tabs" role="group" aria-label={t.expression}>

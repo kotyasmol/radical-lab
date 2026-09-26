@@ -9,6 +9,15 @@ async function calculate(page: import('@playwright/test').Page, expression: stri
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
+test('main screen has no decorative logo or promotional copy', async ({ page }) => {
+  await expect(page.locator('.brand')).toHaveText('Radical Lab');
+  await expect(page.locator('.brand-mark, .intro, .privacy')).toHaveCount(0);
+  await expect(page.getByText('Математика под вашим контролем.')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Обновления' }).click();
+  await expect(
+    page.getByText('Проверка обращается к GitHub только за версией релиза.'),
+  ).toHaveCount(0);
+});
 test('numeric workflow, precision and history', async ({ page }) => {
   await calculate(page, 'sqrt(-16)+sqrt(2)');
   await expect(page.getByTestId('result')).toHaveText('1.4142135623730950488 + 4i');

@@ -65,11 +65,6 @@ export function PrecisionPanel({
         </select>
         <small>{symbolic ? t.symbolicPrecision : t.rounding}</small>
       </div>
-      <div className="privacy">
-        <h2>{t.localTitle}</h2>
-        <p>{t.localText}</p>
-        <p>{t.offline}</p>
-      </div>
     </aside>
   );
 }

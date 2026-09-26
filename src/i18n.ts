@@ -1,8 +1,6 @@
 export const languages = { ru: 'Русский', en: 'English', es: 'Español', zh: '中文' } as const;
 export type Language = keyof typeof languages;
 const en = {
-  title: 'Mathematics, in your hands.',
-  subtitle: 'Complex numbers. Symbolic expressions. Local computation.',
   help: 'Help',
   language: 'Language',
   numeric: 'Numeric',
@@ -40,9 +38,6 @@ const en = {
   auto: 'Automatic',
   scientific: 'Scientific',
   rounding: 'Round to nearest; ties to even. Trailing zeros are omitted in automatic format.',
-  localTitle: 'Your device. Your calculations.',
-  localText:
-    'Expressions and history stay in this tab. No accounts, analytics or calculation servers.',
   offline: 'The downloaded HTML works offline.',
   symbolicPrecision:
     'Symbolic results are exact expressions; digit settings apply to numeric mode.',
@@ -73,8 +68,6 @@ const en = {
     'The expression, result and session history will be cleared. Export your history first if you need it. Downloaded files will not be deleted.',
   resetConfirm: 'Clear session',
   updateTitle: 'Updates you control',
-  updateText:
-    'Checking contacts GitHub for the latest release version only. Your expressions are never sent. Download a new HTML file to update; keep the old file for rollback.',
   check: 'Check for updates',
   checking: 'Checking…',
   upToDate: 'You have the latest version.',
@@ -105,8 +98,6 @@ const en = {
 };
 type Dictionary = { [K in keyof typeof en]: string };
 const ru: Dictionary = {
-  title: 'Математика под вашим контролем.',
-  subtitle: 'Комплексные числа. Символьные выражения. Локальные вычисления.',
   help: 'Справка',
   language: 'Язык',
   numeric: 'Численно',
@@ -145,9 +136,6 @@ const ru: Dictionary = {
   scientific: 'Научный',
   rounding:
     'Округление к ближайшему; при равенстве — к чётному. В автоформате конечные нули не выводятся.',
-  localTitle: 'Вычисления — на вашем устройстве.',
-  localText:
-    'Выражения и история остаются в этой вкладке. Без аккаунтов, аналитики и сервера вычислений.',
   offline: 'Скачанный HTML работает без интернета.',
   symbolicPrecision:
     'Символьный результат — точное выражение; настройка цифр действует в численном режиме.',
@@ -178,8 +166,6 @@ const ru: Dictionary = {
     'Выражение, результат и история сеанса будут очищены. При необходимости сначала экспортируйте историю. Скачанные файлы удалены не будут.',
   resetConfirm: 'Очистить сеанс',
   updateTitle: 'Обновления под вашим контролем',
-  updateText:
-    'Проверка обращается к GitHub только за версией релиза. Выражения никуда не отправляются. Для обновления скачайте новый HTML; старый файл можно оставить для отката.',
   check: 'Проверить обновления',
   checking: 'Проверяем…',
   upToDate: 'У вас актуальная версия.',
@@ -208,8 +194,6 @@ const ru: Dictionary = {
   ready: 'Всё готово к следующей идее.',
 };
 const es: Dictionary = {
-  title: 'Las matemáticas, en tus manos.',
-  subtitle: 'Números complejos. Expresiones simbólicas. Cálculo local.',
   help: 'Ayuda',
   language: 'Idioma',
   numeric: 'Numérico',
@@ -247,9 +231,6 @@ const es: Dictionary = {
   auto: 'Automático',
   scientific: 'Científico',
   rounding: 'Redondeo al más cercano; empates al par. El formato automático omite ceros finales.',
-  localTitle: 'Tu dispositivo. Tus cálculos.',
-  localText:
-    'Las expresiones y el historial permanecen en esta pestaña. Sin cuentas, analítica ni servidores de cálculo.',
   offline: 'El HTML descargado funciona sin internet.',
   symbolicPrecision:
     'Los resultados simbólicos son expresiones exactas; los dígitos se aplican al modo numérico.',
@@ -280,8 +261,6 @@ const es: Dictionary = {
     'Se borrarán la expresión, el resultado y el historial. Exporta antes si lo necesitas. No se eliminarán los archivos descargados.',
   resetConfirm: 'Borrar sesión',
   updateTitle: 'Tú controlas las actualizaciones',
-  updateText:
-    'La comprobación consulta solo la versión en GitHub. No envía expresiones. Descarga un nuevo HTML para actualizar; conserva el anterior para volver atrás.',
   check: 'Buscar actualizaciones',
   checking: 'Comprobando…',
   upToDate: 'Tienes la última versión.',
@@ -309,8 +288,6 @@ const es: Dictionary = {
   ready: 'Todo listo para tu siguiente idea.',
 };
 const zh: Dictionary = {
-  title: '数学，尽在掌握。',
-  subtitle: '复数、符号表达式、本地计算。',
   help: '帮助',
   language: '语言',
   numeric: '数值',
@@ -348,8 +325,6 @@ const zh: Dictionary = {
   auto: '自动',
   scientific: '科学计数法',
   rounding: '舍入到最接近的值，中点取偶数。自动格式省略末尾的零。',
-  localTitle: '在您的设备上计算。',
-  localText: '表达式和历史记录仅保留在此标签页中。无需账户，没有分析追踪或计算服务器。',
   offline: '下载的 HTML 可离线使用。',
   symbolicPrecision: '符号结果是精确表达式，位数设置仅用于数值模式。',
   updates: '更新',
@@ -377,8 +352,6 @@ const zh: Dictionary = {
   resetText: '表达式、结果和历史记录将被清除。如需保留，请先导出。下载的文件不会被删除。',
   resetConfirm: '清除会话',
   updateTitle: '由您控制更新',
-  updateText:
-    '检查更新仅向 GitHub 查询发布版本，不发送表达式。下载新的 HTML 即可更新，保留旧文件可用于回退。',
   check: '检查更新',
   checking: '检查中…',
   upToDate: '当前为最新版本。',
