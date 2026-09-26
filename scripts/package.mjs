@@ -24,4 +24,4 @@ await writeFile(
   `${createHash('sha256').update(html).digest('hex')}  radical-lab.html\n`,
 );
 await writeFile(new URL('version.json', root), JSON.stringify({ version: pkg.version }) + '\n');
-console.log(`Portable release: ${html.length.toLocaleString('en-US')} bytes; SHA-256 generated.`);
+console.log(`Portable release: ${html.length.toLocaleString('en-US')} bytes; SHA-256 written.`);
