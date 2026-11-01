@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "decimal.js": "10.6.0",
-    "nerdamer": "1.1.13",
+    "nerdamer": "2.0.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
